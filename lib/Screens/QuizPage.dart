@@ -100,7 +100,7 @@ class _QuizPageState extends State<QuizPage> {
                   ),
                 );
               } else {
-                return Center(child: CircularProgressIndicator());
+                return Center(child: CircularProgressIndicator(backgroundColor: Colors.black54,valueColor: AlwaysStoppedAnimation<Color>(Colors.deepOrange),));
               }
             }));
   }
