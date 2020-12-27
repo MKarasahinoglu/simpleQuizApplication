@@ -12,7 +12,7 @@ class HomePage extends StatelessWidget { //ignore: must_be_immutable
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(backgroundColor: Colors.blueGrey,title:Text('Bilgisayar Sınavı',style: TextStyle(fontFamily: 'TR'),)),
+      appBar: AppBar(backgroundColor: Colors.blueGrey,title:Text('Computer Test',style: TextStyle(fontFamily: 'TR'),)),
       body: Container(
         decoration: BoxDecoration(
           image: DecorationImage(
@@ -34,7 +34,7 @@ class HomePage extends StatelessWidget { //ignore: must_be_immutable
                   )
               ),
               child: Text(
-                'Bilgisayar Sınavına Hoşgeldiniz', textAlign: TextAlign.center,
+                'Welcome to Computer Test', textAlign: TextAlign.center,
                 style: TextStyle(
                     fontSize: 25,
                     fontWeight: FontWeight.bold, fontFamily: 'TR', color: Colors.black54

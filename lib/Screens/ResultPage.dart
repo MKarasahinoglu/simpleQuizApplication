@@ -22,7 +22,7 @@ class _ResultPageState extends State<ResultPage> {
     passedOrFailed();
     return Scaffold(
       appBar: AppBar(backgroundColor: Colors.blueGrey,
-        title: Text(' Sonuç ',style: TextStyle(fontFamily: 'TR',fontSize:25),),
+        title: Text(' Result ',style: TextStyle(fontFamily: 'TR',fontSize:25),),
       ),
       body: Container(alignment: Alignment.center,
         decoration: BoxDecoration(
@@ -42,7 +42,7 @@ class _ResultPageState extends State<ResultPage> {
               height: 20,
             ),
             Text(
-              'Tebrikler Puanınız',
+              'Your Score',
               style: TextStyle(fontSize: 30,fontFamily: 'TR',color: Colors.black87),
             ),
             SizedBox(
