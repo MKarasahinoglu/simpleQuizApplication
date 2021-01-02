@@ -2,7 +2,7 @@ import 'Question.dart';
 import 'Option.dart';
 import 'package:http/http.dart' as http;
 import 'dart:convert' as converter;
-import 'package:cetquiz_app/Screens/HomePage.dart';
+import 'package:simpleQuizApplication/Service/Globals.dart';
 
 class QuizManager {
   QuizManager() {
@@ -13,9 +13,8 @@ class QuizManager {
 
   Future<void> loadQuestions(int numberOfQuestions) async {
     var url='';
-    if(HomePage.optionDecided==1){url =
-        'https://opentdb.com/api.php?amount=$numberOfQuestions&category=18&difficulty=easy&type=multiple';}
-    else if(HomePage.optionDecided==2) {url='https://opentdb.com/api.php?amount=$numberOfQuestions&category=18&difficulty=easy&type=boolean';}
+
+    url='https://opentdb.com/api.php?amount=$numberOfQuestions&category=${Globals.categoryNumber}&difficulty=medium&type=multiple';
 
     var response = await http.get(url);
     print(response.statusCode);
@@ -77,7 +76,7 @@ class QuizManager {
   }
 
   Question getCurrentQuestion() {
-    print('getCurrentQueestion $currentQuestionId');
+    print('getCurrentQuestion $currentQuestionId');
     if (currentQuestionId < _questions.length) {
       return _questions[currentQuestionId];
     } else {

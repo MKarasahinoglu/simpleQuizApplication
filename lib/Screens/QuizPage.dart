@@ -1,6 +1,8 @@
-import 'package:cetquiz_app/Screens/ResultPage.dart';
-import 'package:cetquiz_app/Service/Question.dart';
-import 'package:cetquiz_app/Service/QuizManager.dart';
+import 'package:simpleQuizApplication/Screens/HomePage.dart';
+import 'package:simpleQuizApplication/Screens/ResultPage.dart';
+import 'package:simpleQuizApplication/Service/Question.dart';
+import 'package:simpleQuizApplication/Service/QuizManager.dart';
+import 'package:simpleQuizApplication/Service/Globals.dart';
 import 'package:flutter/material.dart';
 
 class QuizPage extends StatefulWidget {
@@ -45,7 +47,7 @@ class _QuizPageState extends State<QuizPage> {
     }
     return optionButtons;
   }
-  int totalQuestionNumber=10;
+  int totalQuestionNumber=Globals.questionNumber;
   @override
   void initState() {
     // TODO: implement initState
