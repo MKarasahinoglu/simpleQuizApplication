@@ -1,4 +1,3 @@
-import 'package:simpleQuizApplication/Screens/HomePage.dart';
 import 'package:simpleQuizApplication/Screens/ResultPage.dart';
 import 'package:simpleQuizApplication/Service/Question.dart';
 import 'package:simpleQuizApplication/Service/QuizManager.dart';
@@ -11,6 +10,7 @@ class QuizPage extends StatefulWidget {
 }
 class _QuizPageState extends State<QuizPage> {
   QuizManager _manager = QuizManager();
+
   Future<void> quizloader;
   List<Widget> getOptions(Question question) {
     List<Widget> optionButtons = [];
@@ -19,6 +19,7 @@ class _QuizPageState extends State<QuizPage> {
         onPressed: () {
 
           if (_manager.isFinished()) {
+            _manager.lastScore(_manager.getCurrentQuestion().options[i].score);
             Navigator.of(context).pushReplacement(MaterialPageRoute(
                 builder: (context) => ResultPage(
                       score: _manager.getTotalScore(),
@@ -59,8 +60,14 @@ class _QuizPageState extends State<QuizPage> {
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(backgroundColor: Colors.blueGrey,
-          title: Text(
-              'Questions ${_manager.getCurrentId()}/$totalQuestionNumber',style: TextStyle(fontFamily: 'TR'),),
+          title: Row(
+            children: [
+
+              Expanded(flex: 5,child: Text(
+                'Questions ${_manager.getCurrentId()}/$totalQuestionNumber',textAlign: TextAlign.left,style: TextStyle(fontFamily: 'TR'),),),
+              Expanded(flex: 5,child:Text('Score ${_manager.getTotalScore()}',textAlign: TextAlign.right,style: TextStyle(fontFamily: 'TR'),), )
+            ],
+          ),
         ),
         body: FutureBuilder<void>(
             future: quizloader,

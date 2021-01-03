@@ -3,4 +3,5 @@ class Globals {
   static int questionNumber=0;
   static String difficultyLevel='';
   static String questionType='';
+  static int specifyScore=0;
 }
